@@ -31,18 +31,17 @@ public class Calculator {
      */
     public static void calculate(String leftNumber, String operation, String rightNumber) {
         // TODO: Group 3: Write this function!
-
         boolean numValid = true;
         boolean opValid = true;
         int leftInt, rightInt;
         int resultInt = 0;
 
         // TODO: when parse and format are complete, uncomment these lines
-        //leftInt = parse(leftNumber);
-        //rightInt = parse(rightNumber);
-        // TODO: when parse and format are complete, delete these lines
-        leftInt = parseDecimalNumber(leftNumber);
-        rightInt = parseDecimalNumber(rightNumber);
+        leftInt = RomanNumerals.parse(leftNumber);
+        rightInt = RomanNumerals.parse(rightNumber);
+        // TODO: when parse and format are complete, comment out these lines
+        //leftInt = parseDecimalNumber(leftNumber);
+        //rightInt = parseDecimalNumber(rightNumber);
 
         // This block prints 'invalid number' to the console if user input is not a roman numeral
         if (leftInt == -1) {
@@ -102,7 +101,7 @@ public class Calculator {
                 if (resultInt <= 0 || resultInt >= 4000) {
                     System.out.println("result out of range");
                 } else {
-                    System.out.println(resultInt); //TODO: Change to format(resultInt)
+                    System.out.println(RomanNumerals.format(resultInt));
                 }
             }
 
