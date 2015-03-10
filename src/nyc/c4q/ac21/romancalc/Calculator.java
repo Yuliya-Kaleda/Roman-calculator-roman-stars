@@ -31,6 +31,87 @@ public class Calculator {
      */
     public static void calculate(String leftNumber, String operation, String rightNumber) {
         // TODO: Group 3: Write this function!
+
+        boolean numValid = true;
+        boolean opValid = true;
+        int leftInt, rightInt;
+        int resultInt = 0;
+
+        // TODO: when parse and format are complete, uncomment these lines
+        //leftInt = parse(leftNumber);
+        //rightInt = parse(rightNumber);
+        // TODO: when parse and format are complete, delete these lines
+        leftInt = parseDecimalNumber(leftNumber);
+        rightInt = parseDecimalNumber(rightNumber);
+
+        // This block prints 'invalid number' to the console if user input is not a roman numeral
+        if (leftInt == -1) {
+            numValid = false;
+            System.out.println("invalid number: " + leftNumber);
+        }
+        if (rightInt == -1) {
+            numValid = false;
+            System.out.println("invalid number: " + rightNumber);
+        }
+
+        // This block performs the operation if user input is valid
+        if (numValid == true) {
+
+            //Addition
+            if (operation.equals("+")) {
+                resultInt = leftInt + rightInt;
+            }
+
+            //Subtraction
+            else if (operation.equals("-")) {
+                resultInt = leftInt - rightInt;
+            }
+
+            //Multiplication
+            else if (operation.equals("*")) {
+                resultInt = leftInt * rightInt;
+            }
+
+            //Division
+            else if (operation.equals("/")) {
+                resultInt = leftInt / rightInt;
+            }
+
+            //Modulo
+            else if (operation.equals("%")) {
+                resultInt = leftInt % rightInt;
+            }
+
+            //Average
+            else if (operation.equals("#")) {
+                resultInt = (leftInt + rightInt)/2;
+            }
+
+            //Invalid operation
+            else {
+                opValid = false;
+                System.out.println("invalid operation");
+            }
+
+
+            // Formats and displays the result
+
+            if(opValid && numValid) {
+
+                // If result is in range, formats to roman numeral and displays to console
+                if (resultInt <= 0 || resultInt >= 4000) {
+                    System.out.println("result out of range");
+                } else {
+                    System.out.println(resultInt); //TODO: Change to format(resultInt)
+                }
+            }
+
+
+
+
+        }
+
+
     }
 
     /**
