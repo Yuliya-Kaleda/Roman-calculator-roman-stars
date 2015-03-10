@@ -89,6 +89,8 @@ public class RomanNumerals {
 
         int[] value = new int[lengthOfNumber];
 
+
+
         for (int i = lengthOfNumber; i> 0;i-=1) {
             if (number.charAt(i-1)==('I'))
                 value [i-1]= 1;
@@ -105,11 +107,17 @@ public class RomanNumerals {
             else if (number.charAt(i -1)==('M'))
                 value [i-1]= 1000;
             else
-                return -1; //returns -1 if numbers String is not Roman Numeral
-            //System.out.println(value[i-1]);
-
-
+                return -1; //returns -1 if numbers String is not a Roman Numeral
         }
+
+        //iterates through values of roman numerals in numbers array and returns -1 if there are 4 equal values in a row
+        for(int i = 0; i < lengthOfNumber -3; i+=1){
+            if(value [i] == value[i+1] && value [i+1] == value[i+2] && value [i+2] == value[i+3]){
+                return -1;
+            }
+        }
+
+
 
         int total = value [lengthOfNumber-1];
         for (int i = lengthOfNumber;i > 1;i-=1) {
@@ -189,6 +197,15 @@ public class RomanNumerals {
             System.out.println("Not Roman Input: Success");
         }else{
             System.out.println("Not Roman Input: Fail " + notRoman);
+        }
+
+        // This block tests if parse() returns -1 when given an improper roman numeral
+        int improperRoman = parse("IIII");
+
+        if(improperRoman == -1) {
+            System.out.println("Improper Roman Input: Success");
+        }else{
+            System.out.println("Improper Roman Input: Fail " + improperRoman);
         }
 
     // format() TESTS

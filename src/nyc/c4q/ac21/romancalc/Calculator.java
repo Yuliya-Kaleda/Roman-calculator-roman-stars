@@ -36,10 +36,10 @@ public class Calculator {
         int leftInt, rightInt;
         int resultInt = 0;
 
-        // TODO: when parse and format are complete, uncomment these lines
+
         leftInt = RomanNumerals.parse(leftNumber);
         rightInt = RomanNumerals.parse(rightNumber);
-        // TODO: when parse and format are complete, comment out these lines
+
         //leftInt = parseDecimalNumber(leftNumber);
         //rightInt = parseDecimalNumber(rightNumber);
 
@@ -53,8 +53,17 @@ public class Calculator {
             System.out.println("invalid number: " + rightNumber);
         }
 
+        if (operation.equals("+") || operation.equals("-") || operation.equals("*") ||
+                operation.equals("/") || operation.equals("%") || operation.equals("#")) {
+            opValid = true;
+        } else {
+            opValid = false;
+            System.out.println("invalid operation");
+
+        }
+
         // This block performs the operation if user input is valid
-        if (numValid == true) {
+        if (numValid == true && opValid == true) {
 
             //Addition
             if (operation.equals("+")) {
@@ -84,12 +93,6 @@ public class Calculator {
             //Average
             else if (operation.equals("#")) {
                 resultInt = (leftInt + rightInt)/2;
-            }
-
-            //Invalid operation
-            else {
-                opValid = false;
-                System.out.println("invalid operation");
             }
 
 
