@@ -30,7 +30,7 @@ public class Calculator {
      *   The right operand.
      */
     public static void calculate(String leftNumber, String operation, String rightNumber) {
-        // TODO: Group 3: Write this function!
+        // Group 3: Write this function!
         boolean numValid = true;
         boolean opValid = true;
         int leftInt, rightInt;
