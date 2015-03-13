@@ -12,7 +12,7 @@ public class RomanNumerals {
      *   The value in Roman numerals.
      */
     public static String format(int value) {
-        // TODO: Group 1: Write this function!
+        // Group 1: Write this function!
         String romanNum = "";
 
 
@@ -82,7 +82,7 @@ public class RomanNumerals {
      *   The value, or -1 if the number isn't in Roman numerals.
      */
     public static int parse(String number) {
-        // TODO: Group 2: Write this function!
+        // Group 2: Write this function!
 
         int lengthOfNumber = number.length();
         //int "I" = 1;
