@@ -18,7 +18,7 @@ public class RomanNumerals {
 
         while (value > 0) {
             while (value >= 1000) {
-                romanNum = "M";
+                romanNum = romanNum + "M";
                 value -= 1000;
             }
             while (value >= 900) {
