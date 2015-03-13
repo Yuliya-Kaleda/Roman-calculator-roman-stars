@@ -36,9 +36,8 @@ public class Calculator {
         int leftInt, rightInt;
         int resultInt = 0;
 
-
-        leftInt = RomanNumerals.parse(leftNumber);
-        rightInt = RomanNumerals.parse(rightNumber);
+        leftInt = RomanNumerals.parse(leftNumber.toUpperCase());
+        rightInt = RomanNumerals.parse(rightNumber.toUpperCase());
 
         //leftInt = parseDecimalNumber(leftNumber);
         //rightInt = parseDecimalNumber(rightNumber);
